@@ -31,7 +31,7 @@ c) Imprime os números pares de 2 a 10.
 
 d) Imprime os números ímpares de 2 a 10.
 
-Resposta: a) **a) Imprime os números pares de 1 a 10.**
+Resposta: **a) Imprime os números pares de 1 a 10.**
 ______
 
 **2)** Identificar a linha que falta no código para criar uma classe Veiculo com atributo marca, e uma classe Carro que herda de Veiculo com um método ligar(). 

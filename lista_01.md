@@ -122,6 +122,7 @@ Criando e manipulando Animais:
 Dica: Utilize `console.log()` para exibir as informações!
 
 Resposta:
+```Javascript
 class animal{
     constructor(nome, idade){
         this.nome = nome
@@ -137,6 +138,7 @@ let cachorro = new animal("pidão", 3);
 let gato = new animal("megatron", 2);
 cachorro.descrever();
 gato.descrever();
+```
 ______
 
 **8)** Nos últimos dias tivemos a oportunidade de ter contato com Programação Orientada a Objetos, e tivemos contato com o tema "herança". Herança é um princípio de orientação a objetos, que permite que classes compartilhem atributos e métodos. Ela é usada na intenção de reaproveitar código ou comportamento generalizado ou especializar operações ou atributos. Então vamos praticar esse conteúdo nessa questão.
@@ -163,6 +165,7 @@ Chamando os Métodos:
 Dica: Utilize console.log() para exibir as informações!
 
 Resposta:
+```Javascript
 class animal{
     constructor(nome, idade){
         this.nome = nome
@@ -176,11 +179,9 @@ class animal{
 
 class gato extends animal{
     constructor(nome, idade, cor){
-   
-       super(nome, idade)
+         super(nome, idade)
         this.cor = cor
     };
-
     miar(){
         console.log("Saca só no rugido do", this.nome + ": miiauuuuuuu")
     }
@@ -192,6 +193,7 @@ let gatinho = new gato("megatron", 2, "cinza");
 cachorro.descrever();
 gatinho.descrever();
 gatinho.miar();
+```
 ______
 
 **9)** Vamos criar um programa em JavaScript para somar notas!
@@ -214,7 +216,7 @@ Chamando o Método para Ver o Total:
 Dica: Utilize console.log() para exibir as informações!
 
 Resposta:
-
+```Javascript
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -242,6 +244,7 @@ somador.AdicionarNota(nota2);
 somador.AdicionarNota(nota3);
 
 somador.VerTotal();
+```
 ______
 
 **10)** Imagine que você está criando um programa em JavaScript para uma escola. Neste programa, existem diferentes tipos de funcionários, cada um com suas próprias características. Considere as seguintes classes:
@@ -264,6 +267,7 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
 
 Resposta:
+```Javascript
 // Definição da classe 'funcionario'
 class funcionario {
     //atributos da classe funcionarios
@@ -305,4 +309,4 @@ let amanda = new professor("Amanda", 32, 500, "Literatura", 20);
 
 yan.calcularSalario();
 amanda.calcularSalario();
-
+```

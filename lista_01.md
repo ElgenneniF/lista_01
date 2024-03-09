@@ -214,6 +214,7 @@ Chamando o Método para Ver o Total:
 Dica: Utilize console.log() para exibir as informações!
 
 Resposta:
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }

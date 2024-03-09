@@ -121,6 +121,22 @@ Criando e manipulando Animais:
 
 Dica: Utilize `console.log()` para exibir as informações!
 
+Resposta:
+class animal{
+    constructor(nome, idade){
+        this.nome = nome
+        this.idade = idade
+    };
+
+    descrever(){
+        console.log("Esse é o", this.nome, ", ele tem", this.idade, "anos")
+    };
+};
+
+let cachorro = new animal("pidão", 3);
+let gato = new animal("megatron", 2);
+cachorro.descrever();
+gato.descrever();
 ______
 
 **8)** Nos últimos dias tivemos a oportunidade de ter contato com Programação Orientada a Objetos, e tivemos contato com o tema "herança". Herança é um princípio de orientação a objetos, que permite que classes compartilhem atributos e métodos. Ela é usada na intenção de reaproveitar código ou comportamento generalizado ou especializar operações ou atributos. Então vamos praticar esse conteúdo nessa questão.
@@ -146,7 +162,36 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
+Resposta:
+class animal{
+    constructor(nome, idade){
+        this.nome = nome
+        this.idade = idade
+    };
 
+    descrever(){
+        console.log("Esse é o", this.nome, ", ele tem", this.idade, "anos")
+    };
+};
+
+class gato extends animal{
+    constructor(nome, idade, cor){
+   
+       super(nome, idade)
+        this.cor = cor
+    };
+
+    miar(){
+        console.log("Saca só no rugido do", this.nome + ": miiauuuuuuu")
+    }
+
+};
+
+let cachorro = new animal("pidão", 3);
+let gatinho = new gato("megatron", 2, "cinza");
+cachorro.descrever();
+gatinho.descrever();
+gatinho.miar();
 ______
 
 **9)** Vamos criar um programa em JavaScript para somar notas!
@@ -168,7 +213,34 @@ Chamando o Método para Ver o Total:
 
 Dica: Utilize console.log() para exibir as informações!
 
+Resposta:
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
+class SomadorDeNota{
+    constructor(){
+        this.total = 0
+    };
+    AdicionarNota(nota){
+        this.total += nota
+    };
+    VerTotal(){
+        console.log('seu total é:', this.total)
+    };
+};
+
+let nota1 = getRandomInt(10);
+let nota2 = 8;
+let nota3 = getRandomInt(10);
+
+let somador = new SomadorDeNota();
+
+somador.AdicionarNota(nota1);
+somador.AdicionarNota(nota2);
+somador.AdicionarNota(nota3);
+
+somador.VerTotal();
 ______
 
 **10)** Imagine que você está criando um programa em JavaScript para uma escola. Neste programa, existem diferentes tipos de funcionários, cada um com suas próprias características. Considere as seguintes classes:
@@ -189,3 +261,47 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 - Para cada objeto, chame o método calcularSalario() e mostre o salário calculado no console.
 
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
+
+Resposta:
+// Definição da classe 'funcionario'
+class funcionario {
+    //atributos da classe funcionarios
+    constructor(Nome, Idade, SalarioBase) {
+      
+        this.nome = Nome;
+        this.Idade = Idade;
+        this.SalarioBase = SalarioBase;
+    }
+
+    // Método para calcular o salário (será sobrescrito na classe 'professor')
+    calcularSalario() {}
+}
+
+// Definição da classe 'professor' que herda de 'funcionario'
+class professor extends funcionario {
+    constructor(Nome, Idade, SalarioBase, Diciplina, HorasDeAula) {
+        //herda os atributos da classe pai(funcionario)
+        super(Nome, Idade, SalarioBase);
+
+        // atributos dos professores
+        this.Diciplina = Diciplina;
+        this.HorasDeAula = HorasDeAula;
+    }
+
+    // Sobrescreve o método 'calcularSalario' da classe 'funcionario'
+    calcularSalario() {
+        // Valor da hora/aula
+        let valorHoraAula = 11.77;
+
+        // Calcula o salário do professor baseado nas horas de aula, valor da hora/aula e salário base
+        console.log("O salário do", this.nome, "é R$", (this.HorasDeAula * valorHoraAula + this.SalarioBase).toFixed(2));
+    }
+}
+
+//criação dos objetos que herdam as caracteristicas de professor
+let yan = new professor("Yan", 19, 200, "Programação", 5);
+let amanda = new professor("Amanda", 32, 500, "Literatura", 20);
+
+yan.calcularSalario();
+amanda.calcularSalario();
+
